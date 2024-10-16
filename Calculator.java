@@ -61,7 +61,6 @@ public class Calculator {
                         continue;
                     }
                 default:
-                    result = 0;
                     System.out.println("올바른 연산기호를 입력하여 주십시오.");
                     continue;
             }
