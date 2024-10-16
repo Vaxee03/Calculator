@@ -6,7 +6,7 @@ public class Calculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int a, b, result = 0;
+        int a=0, b=0, result = 0;
 
         for(;;) {
             System.out.print("첫 번째 숫자를 입력하세요 : ");
@@ -48,7 +48,6 @@ public class Calculator {
                     break;
                 }
             default:
-                result = 0;
                 System.out.println("올바른 연산기호를 입력하여 주십시오.");
                 break;
 
