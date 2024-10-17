@@ -5,15 +5,15 @@ import java.util.Queue;
 
 public class Calculator {
 
-    Double result;
     //Queue 불러오기
     Queue<Double> saveValue = new LinkedList<>();
 
-    // Setter
+    // Setter 함수
     public void setQueue(double result) {
         saveValue.add(result);
     }
 
+    // 저장된 값 삭제 함수
     public void removeResult() {
         if (saveValue.isEmpty()) {
             System.out.println("삭제할 값이 없습니다.");
