@@ -66,12 +66,22 @@ public class App {
                     System.out.println("올바른 연산기호를 입력하여 주십시오.");
                     continue;
             }
+            Calculator calc = new Calculator();
+            calc.setQueue(result);
+            System.out.println("현재 저장된 값 : "+ calc.saveValue);
 
-            System.out.println("아무 입력하여 계속 계산하기 (exit 입력시 종료)");
-            String exit = sc.next();
-            if (exit.equals("exit")){
-                Calculator Calc = new Calculator(result);
-                return;
+            for(;;){
+                System.out.println("아무 입력하여 계속 계산하기 (exit 입력시 종료 및 remove 입력 시 가장 먼저 저장한 데이터 삭제)");
+                String endChoice = sc.next();
+                if (endChoice.equals("exit")){
+                    return;
+                }
+                else if (endChoice.equals("remove")) {
+                calc.removeResult();
+                }
+                else{
+                    break;
+                }
             }
         }
     }

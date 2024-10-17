@@ -4,16 +4,25 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Calculator {
-    Integer result;
 
+    Double result;
     //Queue 불러오기
-    Queue<Integer> saveValue = new LinkedList<>();
+    Queue<Double> saveValue = new LinkedList<>();
 
-    public Calculator(int result){
-    this.result = result;
-
-    // Queue에 결과 값을 저장
-    saveValue.add(result);
-        System.out.println(saveValue.poll());
+    // Setter
+    public void setQueue(double result) {
+        saveValue.add(result);
     }
+
+    public void removeResult() {
+        if (saveValue.isEmpty()) {
+            System.out.println("삭제할 값이 없습니다.");
+        } else {
+            saveValue.poll();
+            System.out.println("제일 먼저 저장된 값이 삭제되었습니다.");
+        }
+    }
+
+
 }
+
