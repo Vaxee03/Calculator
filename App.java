@@ -1,4 +1,4 @@
-package Task.Calculator;
+package Project.Calculator;
 
 import java.util.Scanner;
 
@@ -47,8 +47,8 @@ public class App {
             result = calculate(num1, num2, oper);
 
             // 연산 완료 값 저장
-            calc.setQueue(result);
-            System.out.println("현재 저장된 값 : " + calc.saveValue);
+            calc.setSaveValue(result);
+            System.out.println("현재 저장된 값 : " + calc.getSaveValue());
 
             // 연산 후
             while (true) {
@@ -58,7 +58,7 @@ public class App {
                     return;
                 } else if (endChoice.equals("remove")) {
                     calc.removeResult();
-                    System.out.println("현재 저장된 값 : " + calc.saveValue);
+                    System.out.println("현재 저장된 값 : " + calc.getSaveValue());
                 } else {
                     break;
                 }
@@ -85,7 +85,7 @@ public class App {
                     return result;
                 case '/':
                     if (num2 != 0) {
-                        result = num1 / num2;
+                        result = (double) num1 / num2;
                         System.out.println("결과 : " + result);
                         return result;
                     } else {
@@ -99,3 +99,5 @@ public class App {
         }
     }
 }
+
+
